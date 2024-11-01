@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+:root{
+    --primary: #ff5751;
+    --primar-variant: #ff5751c4;
+    --white: #FFFFFF;
+    --black: #000000;
+    --bg-error: #f8d7da;
+    --border-error: #f5c6cb;
+    --color-error: #721c24;
+    --bg-success: #d4edda;
+    --border-success: #c3e6cb;
+    --color-success: #155724;
+    --font-family: "DM Sans", "Roboto", sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    box-sizing: border-box;
+    margin: 1.5rem 1.5rem 1.5rem 1.5rem;
+    height: 100%;
+    max-width: 100%;
+    position: relative;
+}
+
+@media screen and (min-width: 769px) {
+    body {
+        height: 100vh;
+    }
+
+    .main {
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+}
+
+
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.toast-error {
+    display: flex;
+    align-items: center;
+    min-width: 250px;
+    background-color: var(--bg-error);
+    color: var(--color-error);
+    border: 1px solid var(--border-error);
+    padding: 16px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+
+  .toast-success {
+    display: flex;
+    align-items: center;
+    min-width: 250px;
+    background-color: var(--bg-success);
+    color: var(--color-success);
+    padding: 16px;
+    border: 1px solid var(--border-success);
+    border-radius: 4px;
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+
+  .toast-show {
+    opacity: 1;
+    transform: translateY(0);
+  }
